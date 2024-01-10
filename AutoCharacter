@@ -1,0 +1,283 @@
+'Mouse Controller'
+import pyautogui
+import random
+import time
+
+
+currently_char_i=0
+currently_file_i=0 
+
+        ## START ##
+def cc_creator(x,y): 
+
+        currently_char_i=x
+        currently_file_i=y  
+
+        time.sleep(2)
+        pyautogui.click(13,35) # FIND WORKSPACE BUTTON
+        time.sleep(2)
+        pyautogui.click(100,69)
+        time.sleep(2)
+        pyautogui.click(960,590)
+        time.sleep(6)
+
+
+        pyautogui.click(421,37) # FIND WINDOWS BUTTON
+        pyautogui.click(504,60) # FIND WORKSPACE BUTTON
+        pyautogui.click(708,242) # FIND RESET LAYGOUT BUTTON
+
+        pyautogui.dragTo(1509, 530, button='left') # find right page
+        pyautogui.dragTo(1156, 530, 2) # drag right page  to bigger
+
+
+
+        pyautogui.click(1711,335) # CLICK CHARACTER CREATE
+
+        time.sleep(30) #  WAIT FOR LOAD CHARACTER
+
+        pyautogui.click(1243+80,189) #  OPEN MORPHER PAGE
+
+        pyautogui.click(1205+70,344) #  CLOSE BODY PAGE
+
+        def RandomValues():
+
+                '''
+                                ## VALUES ##
+                pyautogui.doubleClick(1835,330)
+                pyautogui.press(str(random.randint(0,6)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+                pyautogui.doubleClick(1835,416)
+                pyautogui.press(str(random.randint(0,6)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+                pyautogui.doubleClick(1835,509)
+                pyautogui.press(str(random.randint(0,6)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+                pyautogui.doubleClick(1835,599)
+                pyautogui.press(str(random.randint(0,6)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+                pyautogui.doubleClick(1835,688)
+                pyautogui.press(str(random.randint(0,6)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+                pyautogui.doubleClick(1835,778)
+                pyautogui.press(str(random.randint(0,6)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+
+                pyautogui.doubleClick(1835,868)
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+
+                pyautogui.doubleClick(1835,958)
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press(str(random.randint(0,9)))
+                pyautogui.press("enter")
+
+                '''
+
+
+                ## ENTRE BROW ##
+
+        def save_render_file(i=0):
+                
+                # SET UP RENDER ##
+
+                pyautogui.click(329,40) # OPEN CAMERA PAGE FROM LEFT PAGE
+                pyautogui.click(393,123) # OPEN CAMERA PAGE FROM LEFT PAGE
+                pyautogui.click(1640,859) # OPEN CAMERA PAGE FROM LEFT PAGE
+
+                # SAVE RENDER IMAGE ##
+                pyautogui.doubleClick(629,73) # CLICK FILE PATH
+                time.sleep(2)
+                pyautogui.hotkey('ctrl', 'A') # CLICK FILE PATH
+                time.sleep(2)
+                pyautogui.press("delete")
+                pyautogui.typewrite("C:\\Users\\CFCof\\Desktop\\CC4 AUTOMATIC",interval=0.0)
+                pyautogui.press("enter")
+                pyautogui.hotkey('ctrl', 'shift', 'N')
+                pyautogui.typewrite(str(i),interval=0.1)
+                time.sleep(2)
+              
+                pyautogui.press("enter")
+                time.sleep(1)
+                pyautogui.press("enter")
+                i=i+1
+                pyautogui.doubleClick(307,460)
+                pyautogui.doubleClick(307,460)
+                time.sleep(2)
+                pyautogui.typewrite(str(i),interval=0.3)
+                time.sleep(2)
+                pyautogui.press("enter")
+                time.sleep(3) #  CLOSE IMAGE THAT OPENED THEN RENDER
+                pyautogui.click(1900,20)
+
+                time.sleep(3) #  CLOSE RENDER PAGE IN CC
+                pyautogui.click(1894,264)
+                time.sleep(3) #  CLOSE RENDER PAGE IN CC
+               
+
+        def save_render(i=0):
+    
+                # SET UP RENDER ##
+                        
+                time.sleep(2)
+                pyautogui.doubleClick(629,73) # CLICK FILE PATH
+                time.sleep(2)
+              
+                pyautogui.hotkey('ctrl', 'A')
+                time.sleep(2)
+                pyautogui.press("delete")
+                pyautogui.typewrite("C:\\Users\\CFCof\\Desktop\\CC4 AUTOMATIC\\{}".format(currently_char_i),interval=0.0)
+                pyautogui.press("enter")
+              
+                pyautogui.click(329,40) # OPEN CAMERA PAGE FROM LEFT PAGE
+                pyautogui.click(393,123) # OPEN CAMERA PAGE FROM LEFT PAGE
+                pyautogui.click(1640,859) # OPEN CAMERA PAGE FROM LEFT PAGE
+                
+                pyautogui.doubleClick(307,460)
+                pyautogui.doubleClick(307,460)
+                time.sleep(2)
+                i=i+1
+                pyautogui.typewrite(str(i),interval=0.3)
+                time.sleep(2)
+                pyautogui.press("enter")
+                time.sleep(3) #  CLOSE IMAGE THAT OPENED THEN RENDER
+                pyautogui.click(1900,20)
+
+                time.sleep(3) #  CLOSE RENDER PAGE IN CC
+                pyautogui.click(1894,264)
+                time.sleep(3) #  CLOSE RENDER PAGE IN CC
+
+        def save_OBJ(i=0):
+
+                pyautogui.doubleClick(629,73) # CLICK FILE PATH
+                time.sleep(2)
+                pyautogui.hotkey('ctrl', 'A')
+                time.sleep(2)
+                pyautogui.press("delete")
+                pyautogui.typewrite("C:\\Users\\CFCof\\Desktop\\CC4 AUTOMATIC\\{}".format(currently_char_i),interval=0.0)
+                time.sleep(2)
+                pyautogui.press("enter")
+
+                pyautogui.doubleClick(307,460)
+                pyautogui.doubleClick(307,460)
+                time.sleep(2)
+                i=i+1
+                pyautogui.typewrite(str(i),interval=0.3)
+                time.sleep(2)
+                pyautogui.press("enter")
+        
+
+
+        pyautogui.click(1297+70,476)
+        RandomValues()
+
+                ## ENTRE EYE ##
+        pyautogui.click(1296+70,491)
+        #RandomValues()
+
+                ## ENTRE EAR ##
+        pyautogui.click(1296+70,516)
+        RandomValues()
+
+                ## ENTRE CHEEK ##
+        pyautogui.click(1296+70,541)
+        RandomValues()
+
+                ## ENTRE NOSE ##
+        pyautogui.click(1296+70,566)
+        RandomValues()
+
+        ## ENTRE MOUTH ##
+        pyautogui.click(1296+70,591)
+        #RandomValues()
+
+        ## ENTRE JAW ##
+        pyautogui.click(1296+70,616)
+        RandomValues()
+
+        ## ENTRE CHIN ##
+        pyautogui.click(1296+70,641)
+        RandomValues()
+
+        ## ENTRE NECK ##
+        pyautogui.click(1296+70,666)
+        RandomValues()
+
+
+
+        ## SET UP SCENE ## 
+
+        pyautogui.click(483,211)  # OPEN SCENE PAGE FROM LEFT PAGE
+        pyautogui.doubleClick(323,522) # OPEN LIGHT FILE FROM LEFT PAGE
+        pyautogui.doubleClick(313,859) # IMPORT LIGHT FILE FROM LEFT PAGE
+
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+
+        ## SET UP CAMERA ## 
+
+        pyautogui.click(212,256) # OPEN CAMERA PAGE FROM LEFT PAGE
+        pyautogui.doubleClick(332,507) # OPEN CAMERA FILE FROM LEFT PAGE
+
+        pyautogui.doubleClick(312,500) # IMPORT CAMERA FILE FROM LEFT PAGE
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        save_render_file(currently_char_i)
+
+        pyautogui.doubleClick(464,514) # IMPORT CAMERA FILE FROM LEFT PAGE
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        currently_file_i=currently_file_i+1
+        save_render(currently_file_i)
+
+        pyautogui.doubleClick(317,689) # IMPORT CAMERA FILE FROM LEFT PAGE
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        currently_file_i=currently_file_i+1
+        save_OBJ(currently_file_i)
+
+        pyautogui.doubleClick(449,696) # IMPORT CAMERA FILE FROM LEFT PAGE
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        currently_file_i=currently_file_i+1
+        save_OBJ(currently_file_i)
+
+        pyautogui.doubleClick(312,866) # IMPORT CAMERA FILE FROM LEFT PAGE
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        currently_file_i=currently_file_i+1
+        save_OBJ(currently_file_i)
+
+        ## EXPORT OBJ
+
+        pyautogui.click(253,73)
+        pyautogui.click(290,165)
+        pyautogui.press("enter")
+        pyautogui.click(632,643)
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        save_OBJ(currently_char_i)
+
+        time.sleep(5) #  WAIT FOR LOAD CHARACTER
+
+        ## EXPORT FBX
+
+        pyautogui.click(308,74)
+        pyautogui.click(325,137)
+        pyautogui.press("enter")
+        pyautogui.click(298,936)
+        time.sleep(3) #  WAIT FOR LOAD CHARACTER
+        save_OBJ(currently_char_i)
+
+        time.sleep(5) #  WAIT FOR LOAD CHARACTER
+        cc_creator(x+1,0)
+   
+
+cc_creator(currently_char_i+5,currently_file_i+5)
+
